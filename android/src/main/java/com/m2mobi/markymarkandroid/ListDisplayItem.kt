@@ -29,6 +29,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.text.Layout
 import android.text.SpannableString
 import android.text.Spanned
@@ -120,8 +121,13 @@ class ListDisplayItem(private val mContext: Context,
             string.setSpan(NumberSpan(mListMargin, pIndex + 1), 0, string.length, Spanned.SPAN_INCLUSIVE_INCLUSIVE)
             textView.text = string
         } else {
+            val bulletPointSize = mContext.resources.getDimensionPixelSize(R.dimen.bullet_point_size)
             val string = SpannableString(pText)
-            string.setSpan(android.text.style.BulletSpan(mListMargin, Color.WHITE), 0, string.length, Spanned.SPAN_INCLUSIVE_INCLUSIVE)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                string.setSpan(android.text.style.BulletSpan(mListMargin, Color.WHITE, bulletPointSize), 0, string.length, Spanned.SPAN_INCLUSIVE_INCLUSIVE)
+            } else {
+                string.setSpan(android.text.style.BulletSpan(mListMargin, Color.WHITE), 0, string.length, Spanned.SPAN_INCLUSIVE_INCLUSIVE)
+            }
             textView.text = string
         }
 
