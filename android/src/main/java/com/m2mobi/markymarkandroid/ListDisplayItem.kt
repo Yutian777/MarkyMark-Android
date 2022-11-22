@@ -113,7 +113,7 @@ class ListDisplayItem(private val mContext: Context,
      * @return Returns a TextView
      */
     private fun getTextView(pMarkDownList: MarkdownList, pText: CharSequence, pIndex: Int): TextView {
-        val textView = TextView(mContext, null, R.attr.MarkdownListStyle)
+        val textView = TextView(mContext)
         textView.movementMethod = LinkMovementMethod.getInstance()
 
         if (pMarkDownList.isOrdered) {
