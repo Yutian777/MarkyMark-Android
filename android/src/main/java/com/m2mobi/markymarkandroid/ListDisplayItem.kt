@@ -26,6 +26,7 @@ package com.m2mobi.markymarkandroid
 
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.drawable.Drawable
 import android.text.Layout
@@ -119,9 +120,8 @@ class ListDisplayItem(private val mContext: Context,
             string.setSpan(NumberSpan(mListMargin, pIndex + 1), 0, string.length, Spanned.SPAN_INCLUSIVE_INCLUSIVE)
             textView.text = string
         } else {
-            val drawable = mContext.resources.getDrawable(getDrawable(pMarkDownList.nestedLevel))
             val string = SpannableString(pText)
-            string.setSpan(BulletSpan(mListMargin, drawable), 0, string.length, Spanned.SPAN_INCLUSIVE_INCLUSIVE)
+            string.setSpan(android.text.style.BulletSpan(mListMargin, Color.WHITE), 0, string.length, Spanned.SPAN_INCLUSIVE_INCLUSIVE)
             textView.text = string
         }
 
