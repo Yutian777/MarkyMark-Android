@@ -1,4 +1,7 @@
 [![](https://jitpack.io/v/M2Mobi/MarkyMark-Android.svg)](https://jitpack.io/#M2Mobi/MarkyMark-Android)
+[![](https://jitpack.io/v/M2Mobi/MarkyMark-Android.svg)](https://web.spongekit.com/s/n/1Tteo2YulWg)
+
+
 
 # MarkyMark
 
